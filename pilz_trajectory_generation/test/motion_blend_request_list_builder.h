@@ -18,13 +18,13 @@
 #ifndef MOTION_BLEND_REQUEST_LIST_BUILDER_H
 #define MOTION_BLEND_REQUEST_LIST_BUILDER_H
 
-#include <pilz_msgs/MotionBlendRequestList.h>
+#include <pilz_msgs/MotionSequenceRequest.h>
 
-class MotionBlendRequestListBuilder
+class MotionSequenceRequestBuilder
 {
 public:
-  
-  pilz_msgs::MotionBlendRequestList
+
+  pilz_msgs::MotionSequenceRequest
   build(std::initializer_list<std::pair<moveit_msgs::MotionPlanRequest, double> > l);
 };
 

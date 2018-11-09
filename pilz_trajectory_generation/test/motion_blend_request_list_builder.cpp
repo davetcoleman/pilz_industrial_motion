@@ -17,17 +17,17 @@
 
 #include "motion_blend_request_list_builder.h"
 
-pilz_msgs::MotionBlendRequestList MotionBlendRequestListBuilder::build(
+pilz_msgs::MotionSequenceRequest MotionSequenceRequestBuilder::build(
   std::initializer_list<std::pair<moveit_msgs::MotionPlanRequest, double> > l)
 {
-  pilz_msgs::MotionBlendRequestList req_list;
+  pilz_msgs::MotionSequenceRequest req_list;
 
   for(const auto& pair : l)
   {
-    pilz_msgs::MotionBlendRequest req;
+    pilz_msgs::MotionSequenceItem req;
     req.req = pair.first;
     req.blend_radius = pair.second;
-    req_list.requests.push_back(req);
+    req_list.items.push_back(req);
   }
 
   return req_list;
